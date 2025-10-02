@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 public static class ServiceExtensions
 {
-    public static void AddApplication(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddApplication(this IServiceCollection services, IConfiguration configuration)
     {
         var assembly = Assembly.GetExecutingAssembly();
 
@@ -19,5 +19,7 @@ public static class ServiceExtensions
             cfg.RegisterServicesFromAssembly(assembly);
         });
         services.AddValidatorsFromAssembly(assembly, includeInternalTypes: true);
+
+        return services;
     }
 }

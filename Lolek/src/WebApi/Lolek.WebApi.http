@@ -1,0 +1,6 @@
+@Lolek.WebApi_HostAddress = http://localhost:5087
+
+GET {{Lolek.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

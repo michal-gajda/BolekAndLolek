@@ -1,27 +1,27 @@
-﻿namespace Bolek.Infrastructure;
+﻿namespace Lolek.Infrastructure;
 
 using System.Reflection;
-using Bolek.Infrastructure.Lolek;
+using FluentValidation;
+using Lolek.Infrastructure.Interfaces;
+using Lolek.Infrastructure.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 public static class ServiceExtensions
 {
-    public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
+    public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
         var assembly = Assembly.GetExecutingAssembly();
 
         services.AddAutoMapper(cfg =>
         {
-
         }, assembly);
         services.AddMediatR(cfg =>
         {
             cfg.RegisterServicesFromAssembly(assembly);
         });
+        services.AddValidatorsFromAssembly(assembly);
 
-        services.AddLolek(configuration);
-
-        return services;
+        services.AddSingleton<IWeatherForecastService, WeatherForecastService>();
     }
 }
