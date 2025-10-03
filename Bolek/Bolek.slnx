@@ -22,6 +22,15 @@
   <Folder Name="/tests/ArchitectureTests/">
     <Project Path="tests/ArchitectureTests/Bolek.ArchitectureTests.csproj" />
   </Folder>
+  <Folder Name="/tests/Domain.UnitTests.NUnit/">
+    <Project Path="tests/Domain.UnitTests.NUnit/Bolek.Domain.UnitTests.csproj" />
+  </Folder>
+  <Folder Name="/tests/Domain.UnitTests.TUnit/">
+    <Project Path="tests/Domain.UnitTests.TUnit/Bolek.Domain.UnitTests.csproj" />
+  </Folder>
+  <Folder Name="/tests/Domain.UnitTests.xUnit/">
+    <Project Path="tests/Domain.UnitTests.xUnit/Bolek.Domain.UnitTests.csproj" />
+  </Folder>
   <Folder Name="/tests/Domain.UnitTests/">
     <Project Path="tests/Domain.UnitTests/Bolek.Domain.UnitTests.csproj" />
   </Folder>
