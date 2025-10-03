@@ -13,7 +13,25 @@
     <Project Path="src/WebApi/Bolek.WebApi.csproj" />
   </Folder>
   <Folder Name="/tests/" />
+  <Folder Name="/tests/Application.FunctionalTests/">
+    <Project Path="tests/Application.FunctionalTests/Bolek.Application.FunctionalTests.csproj" />
+  </Folder>
+  <Folder Name="/tests/Application.UnitTests/">
+    <Project Path="tests/Application.UnitTests/Bolek.Application.UnitTests.csproj" />
+  </Folder>
   <Folder Name="/tests/ArchitectureTests/">
     <Project Path="tests/ArchitectureTests/Bolek.ArchitectureTests.csproj" />
+  </Folder>
+  <Folder Name="/tests/Domain.UnitTests/">
+    <Project Path="tests/Domain.UnitTests/Bolek.Domain.UnitTests.csproj" />
+  </Folder>
+  <Folder Name="/tests/Infrastructure.IntegrationTests/">
+    <Project Path="tests/Infrastructure.IntegrationTests/Bolek.Infrastructure.IntegrationTests.csproj" />
+  </Folder>
+  <Folder Name="/tests/WebApi.ArchitectureTests/">
+    <Project Path="tests/WebApi.ArchitectureTests/Bolek.WebApi.ArchitectureTests.csproj" />
+  </Folder>
+  <Folder Name="/tests/WebApi.End2End/">
+    <Project Path="tests/WebApi.End2End/Bolek.WebApi.End2End.csproj" />
   </Folder>
 </Solution>

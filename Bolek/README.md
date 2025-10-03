@@ -123,6 +123,41 @@ dotnet add src/Cli reference src/Infrastructure
 
 ## Tests
 
+### UnitTests - Domain
+
+```powershell
+dotnet new mstest --framework net9.0 --output tests/Domain.UnitTests --name Bolek.Domain.UnitTests
+dotnet sln add tests/Domain.UnitTests
+dotnet add tests/Domain.UnitTests reference src/Domain
+dotnet add tests/Domain.UnitTests package Shouldly
+```
+
+### UnitTests - Application
+
+```powershell
+dotnet new mstest --framework net9.0 --output tests/Application.UnitTests --name Bolek.Application.UnitTests
+dotnet sln add tests/Application.UnitTests
+dotnet add tests/Application.UnitTests reference src/Application
+dotnet add tests/Application.UnitTests package NSubstitute
+dotnet add tests/Application.UnitTests package Shouldly
+```
+
+### FunctionalTests
+
+```powershell
+dotnet new mstest --framework net9.0 --output tests/Application.FunctionalTests --name Bolek.Application.FunctionalTests
+dotnet sln add tests/Application.FunctionalTests
+dotnet add tests/Application.FunctionalTests reference src/Infrastructure
+```
+
+### IntegrationTests
+
+```powershell
+dotnet new mstest --framework net9.0 --output tests/Infrastructure.IntegrationTests --name Bolek.Infrastructure.IntegrationTests
+dotnet sln add tests/Infrastructure.IntegrationTests
+dotnet add tests/Application.IntegrationTests reference src/Infrastructure
+```
+
 ### ArchitectureTests
 
 ```powershell
@@ -134,4 +169,11 @@ dotnet add tests/ArchitectureTests reference src/Infrastructure
 dotnet add tests/ArchitectureTests reference src/WebApi
 dotnet add tests/ArchitectureTests package NetArchTest.Rules
 dotnet add tests/ArchitectureTests package Shouldly
+```
+
+### End2End
+
+```powershell
+dotnet new mstest --framework net9.0 --output tests/WebApi.End2End --name Bolek.WebApi.End2End
+dotnet sln add tests/End2End
 ```
