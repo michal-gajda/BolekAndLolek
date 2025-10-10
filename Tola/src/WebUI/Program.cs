@@ -1,16 +1,17 @@
+namespace Tola.WebUI;
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Tola.WebUI.Data;
 
-namespace Tola.WebUI;
-
 public class Program
 {
-    public static void Main(string[] args)
+    private const int EXIT_SUCCESS = 0;
+
+    public static async Task<int> Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
         var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(connectionString));
@@ -22,7 +23,6 @@ public class Program
 
         var app = builder.Build();
 
-        // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
             app.UseMigrationsEndPoint();
@@ -40,9 +40,10 @@ public class Program
             name: "default",
             pattern: "{controller=Home}/{action=Index}/{id?}")
             .WithStaticAssets();
-        app.MapRazorPages()
-           .WithStaticAssets();
+        app.MapRazorPages().WithStaticAssets();
 
-        app.Run();
+        await app.RunAsync();
+
+        return EXIT_SUCCESS;
     }
 }

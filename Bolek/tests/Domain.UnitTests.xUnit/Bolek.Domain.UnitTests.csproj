@@ -5,8 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Using Include="Xunit" />
+    <Using Include="Bolek.Domain.Types" />
     <Using Include="Shouldly" />
+    <Using Include="Xunit" />
   </ItemGroup>
 
   <ItemGroup>
