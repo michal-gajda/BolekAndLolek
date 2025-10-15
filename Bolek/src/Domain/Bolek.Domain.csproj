@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup />
+  <PropertyGroup />
 
-    <ItemGroup>
-        <Using Include="Bolek.Domain.Types" />
-    </ItemGroup>
+  <ItemGroup>
+    <Using Include="Bolek.Domain.Types" />
+  </ItemGroup>
 
 </Project>

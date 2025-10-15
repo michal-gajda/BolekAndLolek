@@ -2,11 +2,12 @@ namespace Tola.WebUI;
 
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Tola.WebUI.Data;
 
-public class Program
+using Data;
+
+public static class Program
 {
-    private const int EXIT_SUCCESS = 0;
+    private const int ExitSuccess = 0;
 
     public static async Task<int> Main(string[] args)
     {
@@ -17,7 +18,7 @@ public class Program
             options.UseSqlServer(connectionString));
         builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-        builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+        builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
             .AddEntityFrameworkStores<ApplicationDbContext>();
         builder.Services.AddControllersWithViews();
 
@@ -31,6 +32,7 @@ public class Program
         {
             app.UseExceptionHandler("/Home/Error");
         }
+
         app.UseRouting();
 
         app.UseAuthorization();
@@ -44,6 +46,6 @@ public class Program
 
         await app.RunAsync();
 
-        return EXIT_SUCCESS;
+        return ExitSuccess;
     }
 }

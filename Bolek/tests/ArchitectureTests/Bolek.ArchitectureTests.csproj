@@ -1,15 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <PropertyGroup />
+
   <ItemGroup>
     <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
     <Using Include="NetArchTest.Rules" />
     <Using Include="Shouldly" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="MSTest" Version="4.0.0-preview.25415.9" />
-    <PackageReference Include="NetArchTest.Rules" Version="1.3.2" />
-    <PackageReference Include="Shouldly" Version="4.3.0" />
+    <PackageReference Include="MSTest" />
+    <PackageReference Include="NetArchTest.Rules" />
+    <PackageReference Include="Shouldly" />
   </ItemGroup>
 
   <ItemGroup>
